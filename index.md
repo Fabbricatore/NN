@@ -11,7 +11,7 @@ As it can be shown with some simulations, the space of solution contains some gl
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
 The local minima are our target, and luckily they share an amazing property: they come in clusters.\
 Having a cluster of shallow minima is everything we need: we can find them by replicating our sistem and analizing how minima overlap.
-The narrow, deep global minima, wont overlap, where out cluster is shure to have some overlapping.
+The narrow, deep global minima, wont overlap, where our cluster is shure to have some overlapping.
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
