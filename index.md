@@ -1,5 +1,8 @@
 ## How to save the gradient and optimize learning with Replicas
 
+One of the main difficulties encountered in the learning of a deep neural network is the so called "Vanishing Gradient" problem.
+
+
 You can use the [editor on GitHub](https://github.com/Fabbricatore/NN/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
