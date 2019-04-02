@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## How to save the gradient and optimize learning with Replicas
 
 You can use the [editor on GitHub](https://github.com/Fabbricatore/NN/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
