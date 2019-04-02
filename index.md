@@ -27,7 +27,12 @@ Here we can compare the results with the old update rule (on the left) and with 
 The Cost is plotted in orange, the learning rate of the second layer is blue, and the first is red.\\
 One can clearly see how the first layer improves its learning by at least an order
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Code
+
+Here's the code I used to show the effect of the new algorithm.
+It trains simultaniously 2 equal Networks, giving them different batch imputs.\\
+Once the Forward is done, the weights are updatet according to the new rule.\\
+Adding more replicas will result in an even bigger increase.
 
 ```markdown
 
@@ -137,12 +142,3 @@ print(w11[1,1])
 
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Fabbricatore/NN/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
