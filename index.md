@@ -3,11 +3,15 @@
 One of the main difficulties encountered in the learning process of deep neural networks is the so called "Vanishing Gradient" problem.
 We will show that, having some knowledge of how the learning works, one can easily improve the learning rate of the first layers.
 
-You can use the [editor on GitHub](https://github.com/Fabbricatore/NN/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### The Space of Solutions
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+What's going on when a NN adjust its weights according to a Stochastic Gradient Descent algorithm?
+What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
+As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.
+Despite our first desire, we should not aim for the global one, since they actually generalize worse!
+The local minima are our target, and luckily they share an amazing property: they come in clusters.
+Having a claster of shallow minima is everything we need: we can find them by replicating our sistem and analizing how minima overlap.
+The narrow, deep global minima, wont overlap, where out cluster is shure to have some overlapping.
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
