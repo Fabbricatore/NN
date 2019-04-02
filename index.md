@@ -13,6 +13,7 @@ The local minima are our target, and luckily they share an amazing property: the
 Having a cluster of shallow minima is everything we need: we can find them by replicating our sistem and analizing how minima overlap.
 The narrow, deep global minima, wont overlap, where our cluster is shure to have some overlapping.
 
+[[https://github.com/Fabbricatore/Replicated-SGD/raw/master/rep.jpg?raw=true]]
 
 
 
