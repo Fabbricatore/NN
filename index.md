@@ -20,8 +20,12 @@ Having in mind everything said above, we can develop a new rule to update the we
 ![image](rep.jpg)
 
 Let's test it!\\
-This are some graphs of the cost and the learning rate of the layers for a NN with two layers
+Here are some graphs of the cost and the learning rate of the layers for a NN with two layers
 ![image](learning1.png)
+
+Here we can compare the results with the old update rule (on the left) and with the new one (on the right)\\
+The Cost is plotted in orange, the learning rate of the second layer is blue, and the first is red.\\
+One can clearly see how the first layer improves its learning by at least an order
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
