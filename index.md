@@ -21,7 +21,7 @@ Having in mind everything said above, we can develop a new rule to update the we
 
 Let's test it!\\
 This are some graphs of the cost and the learning rate of the layers for a NN with two layers
-![image](learning1.jpg)
+![image](learning1.png)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
