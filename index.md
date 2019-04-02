@@ -30,36 +30,31 @@ One can clearly see how the first layer improves its learning by at least an ord
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-# N is batch size; D_in is input dimension;
-# H is hidden dimension; D_out is output dimension.
+#N is batch size; D_in is input dimension;
+#H is hidden dimension; D_out is output dimension.
 N, D_in, H, D_out = 64, 1000, 100, 10
 
-#save shit
+#Save values
 a=np.zeros(50)
 b=np.zeros(50)
 c=np.zeros(50)
 
-#data library
+#Data library
 xx = np.random.randn(10*N, D_in)
 yy = np.random.randn(10*N, D_out)
 
-# Create random input and output data
+#Create random input and output data
 x1 = np.random.randn(N, D_in)
 y1 = np.random.randn(N, D_out)
 
 x2 = np.random.randn(N, D_in)
 y2 = np.random.randn(N, D_out)
 
-#random pick from library
+#Randomly pick from library
 
 for i in range(N):
     rnd1 = np.random.randint(N)
@@ -69,7 +64,7 @@ for i in range(N):
     x2[i] = xx[rnd2]
     y2[i] = yy[rnd2]
 
-# Randomly initialize weights
+#Randomly initialize weights
 w11 = np.random.randn(D_in, H)
 w12 = np.random.randn(H, D_out)
 
@@ -82,15 +77,15 @@ eta2=1
 
 for t in range(50):
     
-    # Forward 1
+    #Forward 1
     h = x1.dot(w11)
     h_relu = np.maximum(h, 0)
     y_pred = h_relu.dot(w12)
 
-    # Loss 1
+    #Loss 1
     loss = np.square(y_pred - y1).sum()
     
-    # Backprop 1
+    #Backprop 1
     grad_y_pred = 2.0 * (y_pred - y1)
     grad_w12 = h_relu.T.dot(grad_y_pred)
     grad_h_relu = grad_y_pred.dot(w12.T)
@@ -100,13 +95,13 @@ for t in range(50):
     
     ####################################
     
-    # Forward 2
+    #Forward 2
     h = x2.dot(w21)
     h_relu = np.maximum(h, 0)
     y_pred = h_relu.dot(w22)
 
     
-    # Backprop 2
+    #Backprop 2
     grad_y_pred = 2.0 * (y_pred - y2)
     grad_w22 = h_relu.T.dot(grad_y_pred)
     grad_h_relu = grad_y_pred.dot(w22.T)
@@ -116,7 +111,7 @@ for t in range(50):
     
     ###################################
 
-    # Update weights
+    #Update weights
     w11 -= learning_rate * grad_w11-eta2*np.tanh((w11+w21)/2-w11)
     w12 -= learning_rate * grad_w12-eta2*np.tanh((w12+w22)/2-w12)
     
@@ -140,15 +135,6 @@ plt.show()
 
 print(w11[1,1])
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
