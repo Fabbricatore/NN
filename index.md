@@ -14,7 +14,7 @@ Having a cluster of shallow minima is everything we need: we can find them by re
 The narrow, deep global minima, wont overlap, where our cluster is shure to have some overlapping.
 
 [[https://github.com/Fabbricatore/Replicated-SGD/raw/master/rep.jpg?raw=true]]
-![useful image]({{ https://github.com/Fabbricatore/Replicated-SGD/raw/master/rep.jpg?raw=true }}/assets/image.png)
+![useful image]({{ https://github.com/Fabbricatore/Replicated-SGD/raw/master/rep.jpg?raw=true }}/_rep.png)
 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
