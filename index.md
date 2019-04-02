@@ -19,7 +19,7 @@ Having in mind everything said above, we can develop a new rule to update the we
 
 ![image](rep.jpg)
 
-;n '
+;eta '
 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
