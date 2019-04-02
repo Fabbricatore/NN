@@ -36,6 +36,110 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# N is batch size; D_in is input dimension;
+# H is hidden dimension; D_out is output dimension.
+N, D_in, H, D_out = 64, 1000, 100, 10
+
+#save shit
+a=np.zeros(50)
+b=np.zeros(50)
+c=np.zeros(50)
+
+#data library
+xx = np.random.randn(10*N, D_in)
+yy = np.random.randn(10*N, D_out)
+
+# Create random input and output data
+x1 = np.random.randn(N, D_in)
+y1 = np.random.randn(N, D_out)
+
+x2 = np.random.randn(N, D_in)
+y2 = np.random.randn(N, D_out)
+
+#random pick from library
+
+for i in range(N):
+    rnd1 = np.random.randint(N)
+    rnd2 = np.random.randint(N)
+    x1[i] = xx[rnd1]
+    y1[i] = yy[rnd1]
+    x2[i] = xx[rnd2]
+    y2[i] = yy[rnd2]
+
+# Randomly initialize weights
+w11 = np.random.randn(D_in, H)
+w12 = np.random.randn(H, D_out)
+
+w21 = np.random.randn(D_in, H)
+w22 = np.random.randn(H, D_out)
+
+learning_rate = 1e-6
+eta2=1
+
+
+for t in range(50):
+    
+    # Forward 1
+    h = x1.dot(w11)
+    h_relu = np.maximum(h, 0)
+    y_pred = h_relu.dot(w12)
+
+    # Loss 1
+    loss = np.square(y_pred - y1).sum()
+    
+    # Backprop 1
+    grad_y_pred = 2.0 * (y_pred - y1)
+    grad_w12 = h_relu.T.dot(grad_y_pred)
+    grad_h_relu = grad_y_pred.dot(w12.T)
+    grad_h = grad_h_relu.copy()
+    grad_h[h < 0] = 0
+    grad_w11 = x1.T.dot(grad_h)
+    
+    ####################################
+    
+    # Forward 2
+    h = x2.dot(w21)
+    h_relu = np.maximum(h, 0)
+    y_pred = h_relu.dot(w22)
+
+    
+    # Backprop 2
+    grad_y_pred = 2.0 * (y_pred - y2)
+    grad_w22 = h_relu.T.dot(grad_y_pred)
+    grad_h_relu = grad_y_pred.dot(w22.T)
+    grad_h = grad_h_relu.copy()
+    grad_h[h < 0] = 0
+    grad_w21 = x2.T.dot(grad_h)
+    
+    ###################################
+
+    # Update weights
+    w11 -= learning_rate * grad_w11-eta2*np.tanh((w11+w21)/2-w11)
+    w12 -= learning_rate * grad_w12-eta2*np.tanh((w12+w22)/2-w12)
+    
+    w21 -= learning_rate * grad_w21-eta2*np.tanh((w11+w21)/2-w21)
+    w22 -= learning_rate * grad_w22-eta2*np.tanh((w12+w22)/2-w22)
+    
+    if t<50 :
+        a[t]=abs(np.mean(learning_rate * grad_w11-eta2*np.tanh((w11+w21)/2-w11)))
+        b[t]=abs(np.mean(learning_rate * grad_w12-eta2*np.tanh((w12+w22)/2-w12)))
+        c[t]=loss
+    
+    
+    
+
+plt.plot(a*50,'r')
+plt.plot(b)
+plt.plot(c/1000000000)
+plt.ylabel('rearning rate')
+plt.xlabel(' iterations ')
+plt.show()
+
+print(w11[1,1])
+
 - Bulleted
 - List
 
