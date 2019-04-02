@@ -34,7 +34,7 @@ It trains simultaniously 2 equal Networks, giving them different batch imputs.\\
 Once the Forward is done, the weights are updatet according to the new rule.\\
 Adding more replicas will result in an even bigger increase.
 
-```markdown
+```ruby
 
 import numpy as np
 import matplotlib.pyplot as plt
