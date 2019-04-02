@@ -6,7 +6,7 @@ We will show that, having some knowledge of how the learning works, one can easi
 ### The Space of Solutions
 
 What's going on when a NN adjust its weights according to a Stochastic Gradient Descent algorithm?\
-&nbsp
+&nbsp;
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
