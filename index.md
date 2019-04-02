@@ -1,7 +1,7 @@
 ## How to save the gradient and optimize learning with Replicas
 
-One of the main difficulties encountered in the learning of a deep neural network is the so called "Vanishing Gradient" problem.
-
+One of the main difficulties encountered in the learning process of deep neural networks is the so called "Vanishing Gradient" problem.
+We will show that, having some knowledge of how the learning works, one can easily improve the learning rate of the first layers.
 
 You can use the [editor on GitHub](https://github.com/Fabbricatore/NN/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
