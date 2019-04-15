@@ -10,7 +10,7 @@ What's really happening is that the the N dimensional space of all the weights i
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
 The local minima are our target, and luckily they share an amazing property: they come in clusters.\\
-Having a cluster of shallow minima is everything we need: we can find them by replicating our sistem and analizing how minima overlap.
+Having a cluster of shallow minima is everything we need: we can find them by replicating our system and analizing how minima overlap.
 The narrow, deep global minima, wont overlap, where our cluster is shure to have some overlapping.
 
 ### A new learning rule
