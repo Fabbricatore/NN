@@ -56,8 +56,11 @@ of y identical interacting replicas
 
 ### A new learning rule
 
-All of this can be used to evaluate a new cost function J := \<E\> and thus we can compute our gradient, updating the weights w <- w-c(dE/dw)
-Having in mind everything said above, we can develop a new rule to update the weights. After some tedious math, which I skip here, we come to a modified equation for the update rule.
+All of this can be used to evaluate a new cost function J := \<E\> and thus we can compute our gradient, updating the weights w <- w-c(dE/dw). Our new cost function will be
+
+![](https://latex.codecogs.com/gif.latex?H%28%7BW%5Ea%7D%29%3D%5Csum_%7Ba%3D1%7D%5Ey%20E%28W%5Ea%29-%5Cfrac%7B1%7D%7B%5Cbeta%7D%20%5Csum_%7Bj%3D1%7D%5EN%20%5Clog%7B%28e%5E%7B-%5Cfrac%7B%5Cgamma%7D%7B2%7D%5Csum_%7Ba%3D1%7D%5Ey%28W%5Ea_j-1%29%5E2%7D&plus;e%5E%7B-%5Cfrac%7B%5Cgamma%7D%7B2%7D%5Csum_%7Ba%3D1%7D%5Ey%28W%5Ea_j&plus;1%29%5E2%7D%29%7D)
+
+and therefore the gradient just has an additional term:
 
 ![image](rep.jpg)
 
