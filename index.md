@@ -6,9 +6,11 @@ We will show that, having some knowledge of how the learning works, one can easi
 ### The Space of Solutions
 
 The standard procedure for supervised learning has at its core the objective of minimizing the error, or cost function:
-<p align="center">
+
+<span style="display:block;text-align:center">
 ![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29%3D%5Cmathbb%7BE%7D_%7B%28x%2Cy%29%5Csim%20p_%7Bdata%7D%7D%5BL%28f%28x%3B%5Csigma%29%2Cy%29%5D)
-</p>
+</span>
+
 What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
