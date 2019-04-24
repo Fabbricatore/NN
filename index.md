@@ -53,8 +53,10 @@ of y identical interacting replicas
 
 ![](https://latex.codecogs.com/gif.latex?A%28%5C%7B%5Csigma%5Ea%5C%7D%2C%5Cbeta%2C%5Cgamma%29%3D-%5Cfrac%7B1%7D%7B%5Cbeta%7D%5Clog%7B%5Csum_%7B%5Csigma%5E*%7D%20e%5E%7B-%5Cgamma%5Csum_%7Ba%3D1%7D%5Ey%20d%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D%7D)
 
+
 ### A new learning rule
 
+All of this can be used to evaluate a new cost function J:=<E> and thus we can compute our gradient, updating the weights w <- w-c(dE/dw)
 Having in mind everything said above, we can develop a new rule to update the weights. After some tedious math, which I skip here, we come to a modified equation for the update rule.
 
 ![image](rep.jpg)
