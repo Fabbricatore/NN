@@ -19,6 +19,9 @@ The space of solutions is a highly non trivial object, and this is why we need p
 
 ![](https://latex.codecogs.com/gif.latex?P%28%5Csigma%3B%5Cbeta%29%3DZ%28%5Cbeta%29%5E%7B-1%7D%5Cexp%7B%28-%5Cbeta%20E%28%5Csigma%29%29%7D)
 
+Where E (σ) is the energy of the configuration, β an inverse temperature, and the normalization factorZ (β) iscalled the partitionfunction and can be used to derive all thermodynamic properties.
+
+
 contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
 The local minima are our target, and luckily they share an amazing property: they come in clusters.\\
