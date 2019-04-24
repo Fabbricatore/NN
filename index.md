@@ -45,6 +45,14 @@ To evaluate Z, we can rewrite it as
 
 ![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5E%7B%20%7De%5E%7By%5CPhi%28%5Csigma%5E*%2C%5Cbeta%2C%5Cgamma%29%7D%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7D%5E%7B%20%7D%20e%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5E%7By%7DE%28%5Csigma%5Ea%29-%5Cgamma%5Csum_%7Ba%3D1%7D%5E%7By%7Dd%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D)
 
+This partition function describes a system of y + 1 interacting replicas of the system, one of which acts as reference while the remaining y are identical, subject to the energy E (σ^a) and the interaction with the reference σ* .Studying the equilibrium statistics of this system and tracing out the replicas σ a is equivalent to studying theo riginal model.This provides us with a very simple and general scheme to direct algorithms to explore robust, accessible regionsof the energy landscape: replicating the model,adding an interaction term with a referencecon figuration, and running the algorithm over the resulting extended system.
+In fact,in mostcases,we can further improve on this scheme by tracing out the reference instead, which leaves us with a system
+of y identical interacting replicas
+
+![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7De%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5Ey%20E%28%5Csigma%5Ea%29&plus;A%28%5C%7B%5Csigma%5Ea%5C%7D%2C%5Cbeta%2C%5Cgamma%29%7D)
+
+![](https://latex.codecogs.com/gif.latex?A%28%5C%7B%5Csigma%5Ea%5C%7D%2C%5Cbeta%2C%5Cgamma%29%3D-%5Cfrac%7B1%7D%7B%5Cbeta%7D%5Clog%7B%5Csum_%7B%5Csigma%5E*%7D%20e%5E%7B-%5Cgamma%5Csum_%7Ba%3D1%7D%5Ey%20d%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D%7D)
+
 ### A new learning rule
 
 Having in mind everything said above, we can develop a new rule to update the weights. After some tedious math, which I skip here, we come to a modified equation for the update rule.
