@@ -28,7 +28,7 @@ Another property of the local minima is their appearance in clusters, rather tha
 
 This motivated us to introduce a different measure, which ignores isolated solutions and enhances the statistical weight of large, accessible regions of solutions:
 
-![](P(\sigma;\beta,y,\gamma)=Z(\beta,y,\gamma)^{-1}e^{y\Phi(\sigma,\beta,\gamma)})
+![](https://latex.codecogs.com/gif.latex?P%28%5Csigma%3B%5Cbeta%2Cy%2C%5Cgamma%29%3DZ%28%5Cbeta%2Cy%2C%5Cgamma%29%5E%7B-1%7De%5E%7By%5CPhi%28%5Csigma%2C%5Cbeta%2C%5Cgamma%29%7D)
 
 Here, y is a parameter that has the formal role of an inverse temperature and Φ(σ,γ,β) is a “local free entropy”:
 
