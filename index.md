@@ -4,7 +4,10 @@ One of the main difficulties encountered in the learning process of deep neural 
 We will show that, having some knowledge of how the learning works, one can easily improve the learning rate of the first layers.
 
 ### The Space of Solutions
-\begin{equation} \begin{bmatrix} x & \dot{x} & \theta & \dot{\theta} & L & m & M \end{bmatrix} \end{equation}
+
+The standard procedure for supervised learning has at its core the objective of minimizing the error:
+
+![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29%3D%5Cmathbb%7BE%7D_%7B%28x%2Cy%29%5Csim%20p_%7Bdata%7D%7D%5BL%28f%28x%3B%5Csigma%29%2Cy%29%5D)
 
 What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
@@ -15,8 +18,6 @@ Having a cluster of shallow minima is everything we need: we can find them by re
 The narrow, deep global minima, will not overlap, whereas our cluster is shure to have some overlapping.
 
 ### A new learning rule
-
-![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29%3D%5Cmathbb%7BE%7D_%7B%28x%2Cy%29%5Csim%20p_%7Bdata%7D%7D%5BL%28f%28x%3B%5Csigma%29%2Cy%29%5D)
 
 Having in mind everything said above, we can develop a new rule to update the weights. After some tedious math, which I skip here, we come to a modified equation for the update rule.
 
