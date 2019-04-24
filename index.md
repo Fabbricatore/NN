@@ -23,7 +23,7 @@ Where E (σ) is the energy of the configuration, β an inverse temperature, and 
  This distribution is thus defined whenever a function E (σ) is provided, and indeed it can be studied and provide insight even when the system under consideration is not a physical system. In particular, it can be used to describe interesting properties of optimization problems, in which E (σ) has the role of a cost function that one wishes to minimize; in these cases, one is interested in the limit
 β → ∞, which corresponds to assigning a uniform weight over the global minima of the energy function. This kind of description is at the core of the well-known Simulated Annealing algorithm (2).
 
-It has been shown in a seminal paper (3) that the space of solutions contains global minima, which are rare and hard to find, and a multitude of local minima. Despite our first desire, we should not aim for the global one, since they actually generalize worse.
+It has been shown in a seminal paper (3) that the space of solutions contains global minima, which are rare thus hard to find, and a multitude of local minima. Despite our first desire, we should not aim for the global one, since they actually generalize worse.
 Another property of the local minima is their appearance in clusters, rather than in a uniformly distributed configuration.
 
 This motivated us to introduce a different measure, which ignores isolated solutions and enhances the statistical weight of large, accessible regions of solutions:
