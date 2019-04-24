@@ -62,6 +62,10 @@ All of this can be used to evaluate a new cost function J := \<E\> and thus we c
 
 and therefore the gradient just has an additional term:
 
+![](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%20H%7D%7B%5Cpartial%20W%5Ea_i%7D%28%5C%7BW%5Eb%5C%7D%29%3D%5Cfrac%7B%5Cpartial%20E%7D%7BW_i%7D%28W%29%5Cbigg%5Crvert_%7BW%3DW%5Ea%7D%20-%5Cfrac%7B%5Cgamma%7D%7B%5Cbeta%7D%28%5Ctanh%7B%28%5Cgamma%5Csum_%7Bb%3D1%7D%5Ey%20W%5Eb_i%29%20-%20W%5Ea_i%7D%29)
+
+Our new learning rule thus will be:
+
 ![image](rep.jpg)
 
 Let's test it!\\
