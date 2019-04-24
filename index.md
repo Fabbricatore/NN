@@ -37,6 +37,8 @@ Here, y is a parameter that has the formal role of an inverse temperature and Φ
  d(·,·) being some monotonically increasing function of the distance between configurations.
 In the limit β →∞, this expression reduces (up to an additive constant) to a “local entropy”: It counts the number of minima of the energy, weighting them (via the parameter γ) by the distance from a reference configuration σ. Therefore, if y is large, only the configurations σ that are surrounded by an exponential number of local min- ima will have a nonnegligible weight. By increasing the value of γ, it is possible to focus on narrower neighborhoods around σ, and at large values of γ the reference σ will also with high probability share the properties of the surrounding minima.
 
+From standart Statistical Physics, we can retrieve our cost using ![](https://latex.codecogs.com/gif.latex?%5Cleft%5Clangle%20E%20%5Cright%5Crangle%3D-%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20%5Cbeta%7DlnZ)
+
 
 
 ### A new learning rule
