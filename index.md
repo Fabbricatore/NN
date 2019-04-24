@@ -77,6 +77,14 @@ The Cost is plotted in orange, the learning rate of the second layer is blue, an
 With the old rule, the first layer (red) learns a couple of orders less than the first (blue), whereas with the new rule,
 one can clearly see how the first layer (red) improves its learning by at least an order
 
+### Bibliography and further reading
+
+[1] I.Goodfellow, Y.Bengio and A.Courville *Depp learning*, MIT press, 2017
+[2] C.Baldassi, A.Ingrosso, C.Lucibello, L.Saglietti, and R.Zecchina
+Phys. Rev. Lett. 115, 128101 – 2015
+[3] C.Baldassi, C.Borgs, J.T. Chayes, A.Ingrosso, C.Lucibello, L.Saglietti, R.Zecchina
+Proceedings of the National Academy of Sciences Nov 2016, 113 (48) E7655-E7662;
+
 ### Code
 
 Here's the code I used for the proof of concept of the new algorithm.
