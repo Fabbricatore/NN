@@ -4,8 +4,7 @@ One of the main difficulties encountered in the learning process of deep neural 
 We will show that, having some knowledge of how the learning works, one can easily improve the learning rate of the first layers.
 
 ### The Space of Solutions
-
-$Y=F(X)$
+.. math:: $Y=F(X)$
 
 What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
