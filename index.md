@@ -5,6 +5,8 @@ We will show that, having some knowledge of how the learning works, one can easi
 
 ### The Space of Solutions
 
+$Y=F(X)$
+
 What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
