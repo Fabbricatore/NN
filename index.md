@@ -15,7 +15,11 @@ What's going on when a NN adjusts its weights according to a Stochastic Gradient
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
 All the optimization algorithms aim to search through this space, in order to find the ![](https://latex.codecogs.com/gif.latex?%5Csigma) yielding the minimum cost ![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29).
 
-As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
+The space of solutions is a highly non trivial object, and this is why we need powerfull instruments coming from Statistical Physics (Thermodynamics). In Statistical Physics, the canonical ensemble describes the equilibrium (i.e., long-time limit) properties of a stochastic process in terms of a probability distribution over the configurations ![](https://latex.codecogs.com/gif.latex?%5Csigma) of the system:
+
+![](https://latex.codecogs.com/gif.latex?P%28%5Csigma%3B%5Cbeta%29%3DZ%28%5Cbeta%29%5E%7B-1%7D%5Cexp%7B%28-%5Cbeta%20E%28%5Csigma%29%29%7D)
+
+contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
 The local minima are our target, and luckily they share an amazing property: they come in clusters.\\
 Having a cluster of shallow minima is everything we need: we can find them by replicating our system and analizing how minima overlap.
