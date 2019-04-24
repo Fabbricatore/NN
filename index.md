@@ -13,7 +13,7 @@ Where ![](https://latex.codecogs.com/gif.latex?x) and ![](https://latex.codecogs
 The N weights span a N dimensional space, similar to ![](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BR%7D%5EN), and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is a point in it.
 What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
-All the optimization algorithms aim to search through this space, in order to find the ![](https://latex.codecogs.com/gif.latex?%5Csigma) yielding the minimum cost ![](https://latex.codecogs.com/gif.latex?J%5B%5Csigma%5D).
+All the optimization algorithms aim to search through this space, in order to find the ![](https://latex.codecogs.com/gif.latex?%5Csigma) yielding the minimum cost ![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29).
 
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
