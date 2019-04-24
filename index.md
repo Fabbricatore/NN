@@ -11,7 +11,7 @@ The standard procedure for supervised learning has at its core the objective of 
 
 Where ![](https://latex.codecogs.com/gif.latex?x) and ![](https://latex.codecogs.com/gif.latex?y) are our imputs and expected outputs, and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is our configuraton of weights ![](https://latex.codecogs.com/gif.latex?w%5Cin%5Csigma) (see[1] for a detailed review).\
 The N weights span a N dimensional space, similar to ![](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BR%7D%5EN), and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is a point in it.
-    What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
+What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
 All the optimization algorithms aim to search through this space, in order to find the ![](https://latex.codecogs.com/gif.latex?%5Csigma) yielding the minimum cost ![](https://latex.codecogs.com/gif.latex?J%5B%5Csigma%5D).
 
