@@ -9,10 +9,12 @@ The standard procedure for supervised learning has at its core the objective of 
 
 ![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29%3D%5Cmathbb%7BE%7D_%7B%28x%2Cy%29%5Csim%20p_%7Bdata%7D%7D%5BL%28f%28x%3B%5Csigma%29%2Cy%29%5D)
 
-Where ![](https://latex.codecogs.com/gif.latex?x) and ![](https://latex.codecogs.com/gif.latex?y) are our imputs and expected outputs, and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is our configuraton of weights.
-
-What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
+Where ![](https://latex.codecogs.com/gif.latex?x) and ![](https://latex.codecogs.com/gif.latex?y) are our imputs and expected outputs, and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is our configuraton of weights ![](https://latex.codecogs.com/gif.latex?w%5Cin%5Csigma) (see[1] for a detailed review).\\
+The N weights span a N dimensional space, similar to ![](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BR%7D%5EN), and ![](https://latex.codecogs.com/gif.latex?%5Csigma) is a point in it.
+    What's going on when a NN adjusts its weights according to a Stochastic Gradient Descent algorithm?\\
 What's really happening is that the the N dimensional space of all the weights is being searched for a minima of the cost function.
+All the optimization algorithms aim to search through this space, in order to find the ![](https://latex.codecogs.com/gif.latex?%5Csigma) yielding the minimum cost ![](https://latex.codecogs.com/gif.latex?J%5B%5Csigma%5D).
+
 As it can be shown with some simulations, the space of solution contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
 Despite our first desire, we should not aim for the global one, since they actually generalize worse!
 The local minima are our target, and luckily they share an amazing property: they come in clusters.\\
