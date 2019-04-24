@@ -23,10 +23,16 @@ Where E (σ) is the energy of the configuration, β an inverse temperature, and 
  This distribution is thus defined whenever a function E (σ) is provided, and indeed it can be studied and provide insight even when the system under consideration is not a physical system. In particular, it can be used to describe interesting properties of optimization problems, in which E (σ) has the role of a cost function that one wishes to minimize; in these cases, one is interested in the limit
 β → ∞, which corresponds to assigning a uniform weight over the global minima of the energy function. This kind of description is at the core of the well-known Simulated Annealing algorithm (2).
 
-It has been shown in a seminal paper (3) that the space of solutions contains global minima, which are rare and hard to find, and a multitude of local minima.\\
-Despite our first desire, we should not aim for the global one, since they actually generalize worse.
-Another property of the local minima is their appearance in clusters, rather than in a uniformly distributed configuration.\\
+It has been shown in a seminal paper (3) that the space of solutions contains global minima, which are rare and hard to find, and a multitude of local minima. Despite our first desire, we should not aim for the global one, since they actually generalize worse.
+Another property of the local minima is their appearance in clusters, rather than in a uniformly distributed configuration.
 
+This motivated us to introduce a different measure, which ignores isolated solutions and enhances the statistical weight of large, accessible regions of solutions:
+
+![](P(\sigma;\beta,y,\gamma)=Z(\beta,y,\gamma)^{-1}e^{y\Phi(\sigma,\beta,\gamma)})
+
+Here, y is a parameter that has the formal role of an inverse temperature and Φ(σ,γ,β) is a “local free entropy”:
+
+![](https://latex.codecogs.com/gif.latex?%5CPhi%28%5Csigma%2C%5Cbeta%2C%5Cgamma%29%3D%5Clog%7B%5Csum_%7B%5C%7B%5Csigma%27%5C%7D%7D%5E%7B%7De%5E%7B-%5Cbeta%20E%28%5Csigma%27%29-%5Cgamma%20d%28%5Csigma%2C%5Csigma%27%29%7D%7D)
 
 ### A new learning rule
 
