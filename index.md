@@ -43,7 +43,7 @@ From standart Statistical Physics, we can retrieve our cost using
 
 To evaluate Z, we can rewrite it as
 
-![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5E%7B%7De%5E%7By%5CPhi%28%5Csigma%5E*%2C%5Cbeta%2C%5Cgamma%29%7D%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7D%5E%7B%20%7D%20e%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5E%7By%7DE%28%5Csigma%5Ea%29-%5Cgamma%5Csum_%7Ba%3D1%7D%5E%7By%7Dd%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D)
+![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5E%7B%20%7De%5E%7By%5CPhi%28%5Csigma%5E*%2C%5Cbeta%2C%5Cgamma%29%7D%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7D%5E%7B%20%7D%20e%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5E%7By%7DE%28%5Csigma%5Ea%29-%5Cgamma%5Csum_%7Ba%3D1%7D%5E%7By%7Dd%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D)
 
 ### A new learning rule
 
