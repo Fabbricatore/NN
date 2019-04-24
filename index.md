@@ -72,15 +72,17 @@ Let's test it!\\
 Here are some graphs of the cost and the learning rate of the layers for a NN with two layers
 ![image](learning1.png)
 
-Here we can compare the results with the old update rule (on the left) and with the new one (on the right)\\
+Here we can compare the results with the old learning rule (on the left) and with the new one (on the right)\\
 The Cost is plotted in orange, the learning rate of the second layer is blue, and the first is red.\\
-One can clearly see how the first layer improves its learning by at least an order
+With the old rule, the first layer (red) learns a couple of orders less than the first (blue), whereas with the new rule,
+one can clearly see how the first layer (red) improves its learning by at least an order
 
 ### Code
 
-Here's the code I used to show the effect of the new algorithm.
-It trains simultaniously 2 equal Networks, giving them different batch imputs.\\
+Here's the code I used for the proof of concept of the new algorithm.
+It uses **only 2 replicas**, training them simultaniously, giving them different stochastic batch imputs.\\
 Once the Forward is done, the weights are updatet according to the new rule.\\
+Despite the small numbers of replicas, the improvement is already huge.
 Adding more replicas will result in an even bigger increase.
 
 ```ruby
