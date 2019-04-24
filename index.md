@@ -23,11 +23,10 @@ Where E (σ) is the energy of the configuration, β an inverse temperature, and 
  This distribution is thus defined whenever a function E (σ) is provided, and indeed it can be studied and provide insight even when the system under consideration is not a physical system. In particular, it can be used to describe interesting properties of optimization problems, in which E (σ) has the role of a cost function that one wishes to minimize; in these cases, one is interested in the limit
 β → ∞, which corresponds to assigning a uniform weight over the global minima of the energy function. This kind of description is at the core of the well-known Simulated Annealing algorithm (2).
 
-contains some global minima, which are rare and hard to find, and a multitude of local minima.\\
-Despite our first desire, we should not aim for the global one, since they actually generalize worse!
-The local minima are our target, and luckily they share an amazing property: they come in clusters.\\
-Having a cluster of shallow minima is everything we need: we can find them by replicating our system and analizing how minima overlap.
-The narrow, deep global minima, will not overlap, whereas our cluster is shure to have some overlapping.
+It has been shown in a seminal paper (3) that the space of solutions contains global minima, which are rare and hard to find, and a multitude of local minima.\\
+Despite our first desire, we should not aim for the global one, since they actually generalize worse.
+Another property of the local minima is their appearance in clusters, rather than in a uniformly distributed configuration.\\
+
 
 ### A new learning rule
 
