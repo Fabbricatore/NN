@@ -37,9 +37,13 @@ Here, y is a parameter that has the formal role of an inverse temperature and Φ
  d(·,·) being some monotonically increasing function of the distance between configurations.
 In the limit β →∞, this expression reduces (up to an additive constant) to a “local entropy”: It counts the number of minima of the energy, weighting them (via the parameter γ) by the distance from a reference configuration σ. Therefore, if y is large, only the configurations σ that are surrounded by an exponential number of local min- ima will have a nonnegligible weight. By increasing the value of γ, it is possible to focus on narrower neighborhoods around σ, and at large values of γ the reference σ will also with high probability share the properties of the surrounding minima.
 
-From standart Statistical Physics, we can retrieve our cost using ![](https://latex.codecogs.com/gif.latex?%5Cleft%5Clangle%20E%20%5Cright%5Crangle%3D-%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20%5Cbeta%7DlnZ)
+From standart Statistical Physics, we can retrieve our cost using 
 
+![](https://latex.codecogs.com/gif.latex?%5Cleft%5Clangle%20E%20%5Cright%5Crangle%3D-%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20%5Cbeta%7DlnZ)
 
+To evaluate Z, we can rewrite it as
+
+![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5E%7B%7De%5E%7By%5CPhi%28%5Csigma%5E*%2C%5Cbeta%2C%5Cgamma%29%7D%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7D%5E%7B%20%7D%20e%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5E%7By%7DE%28%5Csigma%5Ea%29-%5Cgamma%5Csum_%7Ba%3D1%7D%5E%7By%7Dd%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D)
 
 ### A new learning rule
 
