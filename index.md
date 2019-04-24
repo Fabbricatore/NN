@@ -16,6 +16,8 @@ The narrow, deep global minima, will not overlap, whereas our cluster is shure t
 
 ### A new learning rule
 
+![](https://latex.codecogs.com/gif.latex?J%28%5Csigma%29%3D%5Cmathbb%7BE%7D_%7B%28x%2Cy%29%5Csim%20p_%7Bdata%7D%7D%5BL%28f%28x%3B%5Csigma%29%2Cy%29%5D)
+
 Having in mind everything said above, we can develop a new rule to update the weights. After some tedious math, which I skip here, we come to a modified equation for the update rule.
 
 ![image](rep.jpg)
