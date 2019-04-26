@@ -79,7 +79,7 @@ one can clearly see how the first layer (red) improves its learning by at least 
 
 ### Bibliography and further reading
 
-[1] I.Goodfellow, Y.Bengio and A.Courville *Depp learning*, MIT press, 2017
+[1] I.Goodfellow, Y.Bengio and A.Courville *Dep learning*, MIT press, 2017
 
 [2] J.S. Yedidia, W.T. Freeman, and Y. Weiss. Constructing free-energy approximations and generalized belief
 propagation algorithms. Information Theory, IEEE Transactions on, 51(7):2282–2312, 2005
