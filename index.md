@@ -19,25 +19,24 @@ The space of solutions is a highly non trivial object, and this is why we need p
 
 ![](https://latex.codecogs.com/gif.latex?P%28%5Csigma%3B%5Cbeta%29%3DZ%28%5Cbeta%29%5E%7B-1%7D%5Cexp%7B%28-%5Cbeta%20E%28%5Csigma%29%29%7D)
 
-Where E (σ) is the energy of the configuration, β an inverse temperature, and the normalization factor Z (β) iscalled the partitionfunction and can be used to derive all thermodynamic properties.
- This distribution is thus defined whenever a function E (σ) is provided, and indeed it can be studied and provide insight even when the system under consideration is not a physical system. In particular, it can be used to describe interesting properties of optimization problems, in which E (σ) has the role of a cost function that one wishes to minimize; in these cases, one is interested in the limit
+Where E (σ) is the energy of the configuration, β is the inverse of the temperature, and the normalization factor Z (β) is called the partitionfunction and can be used to derive all equilibrium properties.
+ This distribution is thus defined whenever a function E (σ) is provided, and indeed it can be studied and can provide insight even when the system under consideration is not a physical system. In particular, it can be used to describe interesting properties of optimization problems, in which E (σ) has the role of a cost function that one wishes to minimize; in these cases, one is interested in the limit
 β → ∞, which corresponds to assigning a uniform weight over the global minima of the energy function. This kind of description is at the core of the well-known Simulated Annealing algorithm [2].
 
-It has been shown in a seminal paper [3] that the space of solutions contains global minima, which are rare thus hard to find, and a multitude of local minima. Despite our first desire, we should not aim for the global one, since they actually generalize worse.
-Another property of the local minima is their appearance in clusters, rather than in a uniformly distributed configuration.
+It has been shown in a seminal paper [3] that the space of solutions contains global minima, which are rare thus hard to find, and a multitude of local minima, which are found in very dense clusters.
 
 This motivated us to introduce a different measure, which ignores isolated solutions and enhances the statistical weight of large, accessible regions of solutions:
 
 ![](https://latex.codecogs.com/gif.latex?P%28%5Csigma%3B%5Cbeta%2Cy%2C%5Cgamma%29%3DZ%28%5Cbeta%2Cy%2C%5Cgamma%29%5E%7B-1%7De%5E%7By%5CPhi%28%5Csigma%2C%5Cbeta%2C%5Cgamma%29%7D)
 
-Here, y is a parameter that has the formal role of an inverse temperature and Φ(σ,γ,β) is a “local free entropy”:
+Here, y is a parameter that has the formal role of the inverse temperature and Φ(σ,γ,β) is a “local entropy”:
 
 ![](https://latex.codecogs.com/gif.latex?%5CPhi%28%5Csigma%2C%5Cbeta%2C%5Cgamma%29%3D%5Clog%7B%5Csum_%7B%5C%7B%5Csigma%27%5C%7D%7D%5E%7B%20%7De%5E%7B-%5Cbeta%20E%28%5Csigma%27%29-%5Cgamma%20d%28%5Csigma%27%2C%5Csigma%29%7D%7D)
 
  d(·,·) being some monotonically increasing function of the distance between configurations.
 In the limit β →∞, this expression reduces (up to an additive constant) to a “local entropy”: It counts the number of minima of the energy, weighting them (via the parameter γ) by the distance from a reference configuration σ. Therefore, if y is large, only the configurations σ that are surrounded by an exponential number of local min- ima will have a nonnegligible weight. By increasing the value of γ, it is possible to focus on narrower neighborhoods around σ, and at large values of γ the reference σ will also with high probability share the properties of the surrounding minima.
 
-From standart Statistical Physics, we can retrieve our cost using 
+From standart Statistical Mechanics, we can retrieve our cost using 
 
 ![](https://latex.codecogs.com/gif.latex?%5Cleft%5Clangle%20E%20%5Cright%5Crangle%3D-%5Cfrac%7B%5Cpartial%20%7D%7B%5Cpartial%20%5Cbeta%7DlnZ)
 
@@ -45,8 +44,8 @@ To evaluate Z, we can rewrite it as
 
 ![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5E%7B%20%7De%5E%7By%5CPhi%28%5Csigma%5E*%2C%5Cbeta%2C%5Cgamma%29%7D%3D%5Csum_%7B%5C%7B%5Csigma%5E*%5C%7D%7D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7D%5E%7B%20%7D%20e%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5E%7By%7DE%28%5Csigma%5Ea%29-%5Cgamma%5Csum_%7Ba%3D1%7D%5E%7By%7Dd%28%5Csigma%5E*%2C%5Csigma%5Ea%29%7D)
 
-This partition function describes a system of y + 1 interacting replicas of the system, one of which acts as reference while the remaining y are identical, subject to the energy E (σ^a) and the interaction with the reference σ* .Studying the equilibrium statistics of this system and tracing out the replicas σ a is equivalent to studying theo riginal model.This provides us with a very simple and general scheme to direct algorithms to explore robust, accessible regionsof the energy landscape: replicating the model,adding an interaction term with a referencecon figuration, and running the algorithm over the resulting extended system.
-In fact,in mostcases,we can further improve on this scheme by tracing out the reference instead, which leaves us with a system
+This partition function describes a system of y + 1 interacting replicas of the system, one of which acts as reference while the remaining y are identical, subject to the energy E (σ^a) and the interaction with the reference σ* .Studying the equilibrium statistics of this system and tracing out the replicas σ a is equivalent to studying the original model. This provides us with a very simple and general scheme to direct algorithms to explore robust, accessible regions of the energy landscape: replicating the model, adding an interaction term with a referencecon figuration, and running the algorithm over the resulting extended system.
+In fact, in mostcases, we can further improve on this scheme by tracing out the reference instead, which leaves us with a system
 of y identical interacting replicas
 
 ![](https://latex.codecogs.com/gif.latex?Z%28%5Cbeta%2Cy%2C%5Cgamma%29%3D%5Csum_%7B%5C%7B%5Csigma%5Ea%5C%7D%7De%5E%7B-%5Cbeta%5Csum_%7Ba%3D1%7D%5Ey%20E%28%5Csigma%5Ea%29&plus;A%28%5C%7B%5Csigma%5Ea%5C%7D%2C%5Cbeta%2C%5Cgamma%29%7D)
@@ -100,109 +99,196 @@ Adding more replicas will result in an even bigger increase.
 
 ```ruby
 
+"""
+Created on Wed Jun 19 11:19:10 2019
+
+@author: Fabbricatore
+"""
+
+# No fancy libraries
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-#N is batch size; D_in is input dimension;
-#H is hidden dimension; D_out is output dimension.
-N, D_in, H, D_out = 64, 1000, 100, 10
+zz=np.load("x_train.npy")
+tt=np.load("t_train.npy")
 
-#Save values
-a=np.zeros(50)
-b=np.zeros(50)
-c=np.zeros(50)
+# N     = size of Training Set
+# B     = batch size
+# D_in  = dimension of input vectors
+# H     = neurons in Hidden Layer
+# D_out = dimension of output vectors
+N, B, D_0, D_in, H, D_out = 60000, 50, 784, 100, 30, 10
 
-#Data library
-xx = np.random.randn(10*N, D_in)
-yy = np.random.randn(10*N, D_out)
+# Replica number
+R=7
 
-#Create random input and output data
-x1 = np.random.randn(N, D_in)
-y1 = np.random.randn(N, D_out)
+# List for the Network Replica
+nets = list()
 
-x2 = np.random.randn(N, D_in)
-y2 = np.random.randn(N, D_out)
+# Learning rates, the second one in for the replica coupling
+learning_rate = 1e-7
+learning_rate2 = 1e-3
 
-#Randomly pick from library
+# Number of learnng epochs
+times=100
+
+# Initializing plots
+a=np.zeros(times)
+b=np.zeros(times)
+c=np.zeros(times)
+ar=np.zeros(times)
+br=np.zeros(times)
+d=np.zeros(times)
+dr=np.zeros(times)
+
+# Initializing random training set
+xx = np.load("x_train.npy")/255
+yy = np.random.randn(N, D_out)
 
 for i in range(N):
-    rnd1 = np.random.randint(N)
-    rnd2 = np.random.randint(N)
-    x1[i] = xx[rnd1]
-    y1[i] = yy[rnd1]
-    x2[i] = xx[rnd2]
-    y2[i] = yy[rnd2]
-
-#Randomly initialize weights
-w11 = np.random.randn(D_in, H)
-w12 = np.random.randn(H, D_out)
-
-w21 = np.random.randn(D_in, H)
-w22 = np.random.randn(H, D_out)
-
-learning_rate = 1e-6
-eta2=1
+    yy[i]=(np.arange(10)==tt[i]).astype(np.int)*1000
 
 
-for t in range(50):
+# NETWORK class
+class net :
     
-    #Forward 1
-    h = x1.dot(w11)
-    h_relu = np.maximum(h, 0)
-    y_pred = h_relu.dot(w12)
+    def __init__(self, D_0, D_in, H, D_out):
+        self.D_0    =   D_0
+        self.D_in   =   D_in
+        self.D_out  =   D_out
+        self.H      =   H
+        self.w0     =   np.random.randn(self.D_0,self.D_in)
+        self.w1     =   np.random.randn(self.D_in,self.H)
+        self.w2     =   np.random.randn(self.H,self.D_out)
+        
+    def work (self,x,y):
+        
+        # Forward
+        h0 = x.dot(self.w0)
+        h0_relu = np.maximum(h0, 0)
+        h = h0_relu.dot(self.w1)
+        h_relu = np.maximum(h, 0)
+        self.y_pred = h_relu.dot(self.w2)
 
-    #Loss 1
-    loss = np.square(y_pred - y1).sum()
+        # Bacward
+        grad_y_pred = 2.0 * (self.y_pred - y)
+        grad_w2 = h_relu.T.dot(grad_y_pred)
+        grad_h_relu = grad_y_pred.dot(self.w2.T)
+        grad_h = grad_h_relu.copy()
+        grad_h[h < 0] = 0
+        grad_w1 = h0_relu.T.dot(grad_h)
+        grad_h0_relu = grad_h.dot(self.w1.T)
+        grad_h0 = grad_h0_relu.copy()
+        grad_h0[h0 < 0] = 0
+        grad_w0 = x.T.dot(grad_h0)
     
-    #Backprop 1
-    grad_y_pred = 2.0 * (y_pred - y1)
-    grad_w12 = h_relu.T.dot(grad_y_pred)
-    grad_h_relu = grad_y_pred.dot(w12.T)
-    grad_h = grad_h_relu.copy()
-    grad_h[h < 0] = 0
-    grad_w11 = x1.T.dot(grad_h)
-    
-    ####################################
-    
-    #Forward 2
-    h = x2.dot(w21)
-    h_relu = np.maximum(h, 0)
-    y_pred = h_relu.dot(w22)
+        # Update weights
+        self.w0 -= learning_rate * grad_w0
+        self.w1 -= learning_rate * grad_w1
+        self.w2 -= learning_rate * grad_w2
 
-    
-    #Backprop 2
-    grad_y_pred = 2.0 * (y_pred - y2)
-    grad_w22 = h_relu.T.dot(grad_y_pred)
-    grad_h_relu = grad_y_pred.dot(w22.T)
-    grad_h = grad_h_relu.copy()
-    grad_h[h < 0] = 0
-    grad_w21 = x2.T.dot(grad_h)
-    
-    ###################################
+        
+        self.gr0  =  abs( np.mean( learning_rate * grad_w0) )
+        self.gr1  =  abs( np.mean( learning_rate * grad_w1) )
+        self.gr2  =  abs( np.mean( learning_rate * grad_w2) )
+        
+        return self.y_pred
+        
+    def grR(self):
+        
+        # Replicas update
+        self.w0 -= learning_rate2 * (gradR()[0] - self.w0)
+        self.w1 -= learning_rate2 * (gradR()[1] - self.w1)
+        self.w2 -= learning_rate2 * (gradR()[2] - self.w2)
 
-    #Update weights
-    w11 -= learning_rate * grad_w11-eta2*np.tanh((w11+w21)/2-w11)
-    w12 -= learning_rate * grad_w12-eta2*np.tanh((w12+w22)/2-w12)
+        
+        self.gr0R  =  abs( np.mean( learning_rate2 * gradR()[0]) )
+        self.gr1R  =  abs( np.mean( learning_rate2 * gradR()[1]) )
+        self.gr2R  =  abs( np.mean( learning_rate2 * gradR()[2]) )
+        #print(self.gr1, self.gr1R)
+        
+ # Create R Replicas
+for i in range(R):
+    nets.append(net(D_0, D_in, H, D_out))        
+   
+# Gradient for the Replica coupling
+def gradR():
+    gr0, gr1, gr2 =  np.zeros([D_0, D_in]), np.zeros([D_in, H]), np.zeros([H, D_out])
+    for i in range(R):
+        gr0 += nets[i].w0/R
+        gr1 += nets[i].w1/R
+        gr2 += nets[i].w2/R
+    return gr0, gr1, gr2
     
-    w21 -= learning_rate * grad_w21-eta2*np.tanh((w11+w21)/2-w21)
-    w22 -= learning_rate * grad_w22-eta2*np.tanh((w12+w22)/2-w22)
     
-    if t<50 :
-        a[t]=abs(np.mean(learning_rate * grad_w11-eta2*np.tanh((w11+w21)/2-w11)))
-        b[t]=abs(np.mean(learning_rate * grad_w12-eta2*np.tanh((w12+w22)/2-w12)))
-        c[t]=loss
+def loss(y_pred, y): 
+    return np.square(y_pred - y).sum()
     
-    
-    
+############################   Let's test it   ######################################## 
 
+
+for k in range(1): # Repeat the test 100 times 
+    
+    for i in range(R):
+        nets[i].w1 = np.random.randn(D_in,H) # Randomly initialize weights every time
+        nets[i].w2 = np.random.randn(H,D_out)
+        nets[i].w0 = np.random.randn(D_0,D_in)
+        
+    for j in range(times): 
+        
+        r = np.random.randint(N, size = B) #Randomly pick from Data set
+        x = xx[r]
+        y = yy[r]
+        
+        for i in range(R):  # let all replicas work
+            nets[i].work(x,y)
+            
+        for i in range(R):
+            nets[i].grR()   # Update weights with new rule
+            
+        a[j]    +=  nets[0].gr1  # Save averaged results
+        b[j]    +=  nets[0].gr2
+        d[j]    +=  nets[0].gr0
+        ar[j]   +=  nets[0].gr1R
+        br[j]   +=  nets[0].gr2R
+        dr[j]   +=  nets[0].gr0R
+        c[j]    +=  loss(y, nets[0].y_pred)
+    
+    
 plt.plot(a*50,'r')
 plt.plot(b)
-plt.plot(c/1000000000)
+plt.plot(c/100000000)
 plt.ylabel('rearning rate')
 plt.xlabel(' iterations ')
 plt.show()
 
-print(w11[1,1])
+
+fig = plt.figure(figsize = (12,5))
+
+ax=fig.add_subplot(3,2,1).plot(b)
+plt.title('w3')
+fig.add_subplot(3,2,3).plot(a,'r')
+plt.title('w2')
+fig.add_subplot(3,2,5).plot(d,'g')
+plt.title('w3')
+fig.add_subplot(3,2,2).plot(br)
+plt.title('w1 R')
+fig.add_subplot(3,2,4).plot(ar,'r')
+plt.title('w2 R')
+fig.add_subplot(3,2,6).plot(dr,'g')
+plt.title('w3 R')
+
+
+# Printing numbers
+fag = plt.figure(figsize=(15,3))
+
+for i in range(10):
+    axs = fag.add_subplot(1,10,i+1) # (row, col, number inside (1<x<row*col))
+    axs.imshow(np.reshape(x[i,:],(28,28)), cmap="gray")
+    axs.set_xlabel(np.argmax(nets[0].y_pred[i]))
+    axs.set_title(np.argmax(y[i]))
+    axs.set_xticks([]); axs.set_yticks([])
 
 ```
 
