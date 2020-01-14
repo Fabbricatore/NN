@@ -92,10 +92,9 @@ Proceedings of the National Academy of Sciences Nov 2016, 113 (48) E7655-E7662;
 ### Code
 
 Here's the code I used for the proof of concept of the new algorithm.
-It uses **only 2 replicas**, training them simultaniously, giving them different stochastic batch imputs.\\
+It uses **as meny replica as you want**, training them simultaniously, giving them different stochastic batch imputs.\\
 Once the Forward is done, the weights are updatet according to the new rule.\\
-Despite the small numbers of replicas, the improvement is already huge.
-Adding more replicas will result in an even bigger increase.
+No CUDA parallelization is used, but you are strongly encouraged to do it and tell me how it worked!
 
 ```ruby
 
